@@ -14,6 +14,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.LinearGradientBuilder;
+import javafx.scene.paint.RadialGradientBuilder;
 
 
 //The soul purpose of this client is to give a somewhat look into the goal of this project
@@ -62,28 +65,29 @@ implements ConnectConstants {
 		banner.setPrefHeight(50.0);
 		banner.setMaxHeight(50.0);
 		banner.setMaxWidth(25 * ConnectConstants.TRACKS);
-		
+
 		String url = "http://slynko.net/Content/themes/images/azure.png";
 		ImageView image = new ImageView(url);
 		banner.getChildren().add(image);
 		image.fitHeightProperty().bind(banner.maxHeightProperty());
 		image.fitWidthProperty().bind(banner.maxWidthProperty());
-		
+		banner.setStyle("-fx-background-color: lightblue");
+
 		GridPane pane = new GridPane();
-		pane.setStyle("-fx-background-color: lightgrey");
+		pane.setStyle("-fx-background-color: linear-gradient(to bottom right, beige, lightgrey)");
 		for (int i = 0; i < ConnectConstants.TRACK_LENGTH; i++)
 			for (int j = 0; j < ConnectConstants.TRACKS; j++){
 				pane.add(cell[i][j] = new Cell(i, j), j, i);
 				cell[i][j].setToken('.');
 			}
-		
+
 		BorderPane borderPane = new BorderPane();
 		borderPane.setCenter(pane);
 		borderPane.setBottom(lblStatus);
 		borderPane.setTop(banner);
 		// Create a scene and place it in the stage
 		Scene scene = new Scene(borderPane, 25 * ConnectConstants.TRACKS, 40 * ConnectConstants.TRACK_LENGTH + 10);
-		primaryStage.setTitle("Connect Them"); // Set the stage title
+		primaryStage.setTitle("ConnectThem"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene in the stage
 		primaryStage.show(); // Display the stage
 		primaryStage.setResizable(false);
@@ -207,13 +211,13 @@ implements ConnectConstants {
 			if (myToken == 'a') {
 				Platform.runLater(() -> {
 					lblStatus.setText("I won!");
-					lblStatus.setTextFill(Color.RED);
+					lblStatus.setTextFill(Color.BLUE);
 				});
 			}
 			else if (myToken == 'b') {
 				Platform.runLater(() -> {
 					lblStatus.setText("Player 1 has won!");
-					lblStatus.setTextFill(Color.RED);
+					lblStatus.setTextFill(Color.BLUE);
 				});
 				receiveMove();
 			}
@@ -226,13 +230,13 @@ implements ConnectConstants {
 			if (myToken == 'b') {
 				Platform.runLater(() -> {
 					lblStatus.setText("I won!");
-					lblStatus.setTextFill(Color.BLUE);
+					lblStatus.setTextFill(Color.PURPLE);
 				});
 			}
 			else if (myToken == 'a') {
 				Platform.runLater(() -> {
 					lblStatus.setText("Player 2 has won!");
-					lblStatus.setTextFill(Color.BLUE);
+					lblStatus.setTextFill(Color.PURPLE);
 				});
 				receiveMove();
 			}
@@ -292,13 +296,12 @@ implements ConnectConstants {
 			repaint();
 		}
 		protected void repaint() {
-			Ellipse ellipse;
 
 			if (token == 'a') {
-				this.setStyle("-fx-background-color: green");
+				this.setStyle("-fx-background-color: linear-gradient(to bottom, blue, black)");
 			}
 			else if (token == 'b') {
-				this.setStyle("-fx-background-color: purple");
+				this.setStyle("-fx-background-color: linear-gradient(to bottom, purple, black)");
 			}
 			else if (token == 'c') {
 
@@ -309,7 +312,7 @@ implements ConnectConstants {
 				this.getChildren().add(rect);
 			}
 			else if (token == '.') {
-				
+
 			}
 		}
 

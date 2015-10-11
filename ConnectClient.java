@@ -68,7 +68,7 @@ implements ConnectConstants {
 		borderPane.setBottom(lblStatus);
 		// Create a scene and place it in the stage
 		Scene scene = new Scene(borderPane, 50 * ConnectConstants.TRACKS, 50 * ConnectConstants.TRACK_LENGTH + 10);
-		primaryStage.setTitle("Connect Them"); // Set the stage title
+		primaryStage.setTitle("ConnectThem"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene in the stage
 		primaryStage.show(); // Display the stage
 		// Connect to the server
