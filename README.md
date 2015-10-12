@@ -1,6 +1,5 @@
 # ConnectThem
 A simple strategy game based on connecting pieces, that connects multiple devices, regardless of platform.
-*ConnectThem is the project I built for my first Hackathon at UC Berkeley in October 2015*
 
 #What it does
 ConnectThem allows people to play a simple strategy game against one another, regardless of what platform they are on.
@@ -19,3 +18,6 @@ I learned a lot about TCP data transfers, Azure, and moving a physical server to
 
 #What's next for ConnectThem
 I would really like to finish the mobile clients (iOS, Android, Windows) for this project to fully demonstrate its capabilities. I also had a great game twist in mind but thought of it too late and didn't have time to implement it, but would love to add it in the future.
+
+---
+*ConnectThem is the project I built for my first Hackathon at UC Berkeley in October 2015*
