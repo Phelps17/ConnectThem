@@ -18,14 +18,7 @@ import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.LinearGradientBuilder;
 import javafx.scene.paint.RadialGradientBuilder;
 
-
-//The soul purpose of this client is to give a somewhat look into the goal of this project
-//which was to maek a simple game server that could host multiple games, from ultiple platforms,
-//at the same time. Esentially allowing iPhones to play computers, androids to play windows phones, etc.
-//while I ran out of time to build multipe mobile clients, I made this fake one quick as a shitty
-//visualization. Had I had more time, I would have made a client for different mobile systems adn had them
-//use socket data transffering to communicate with the server and play along
-public class FakeMobileClient extends Application
+public class WrapToAndroid extends Application
 implements ConnectConstants {
 	private boolean myTurn = false;
 	// Indicate the token for the player
@@ -87,7 +80,7 @@ implements ConnectConstants {
 		borderPane.setTop(banner);
 		// Create a scene and place it in the stage
 		Scene scene = new Scene(borderPane, 25 * ConnectConstants.TRACKS, 40 * ConnectConstants.TRACK_LENGTH + 10);
-		primaryStage.setTitle("ConnectThem"); // Set the stage title
+		primaryStage.setTitle("Android - ConnectThem"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene in the stage
 		primaryStage.show(); // Display the stage
 		primaryStage.setResizable(false);
